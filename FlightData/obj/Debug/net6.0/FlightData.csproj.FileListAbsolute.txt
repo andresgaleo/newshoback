@@ -1,0 +1,12 @@
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\bin\Debug\net6.0\FlightData.deps.json
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\bin\Debug\net6.0\FlightData.dll
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\bin\Debug\net6.0\FlightData.pdb
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\obj\Debug\net6.0\FlightData.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\obj\Debug\net6.0\FlightData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\obj\Debug\net6.0\FlightData.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\obj\Debug\net6.0\FlightData.AssemblyInfo.cs
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\obj\Debug\net6.0\FlightData.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\obj\Debug\net6.0\FlightData.dll
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\obj\Debug\net6.0\refint\FlightData.dll
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\obj\Debug\net6.0\FlightData.pdb
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\FlightData\obj\Debug\net6.0\ref\FlightData.dll
