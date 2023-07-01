@@ -25,6 +25,10 @@ namespace ApiFlights.Controllers
         public async Task<IActionResult> GetJourneys(FlightFilter flight)
         {
             Journey data = await _flightServices.GetJourneys(flight.Origin, flight.Destination);
+            if(data.Price == 0)
+            {
+                return Ok(new { journey = "Ruta no encontrada" });
+            }
             return Ok(new { journey = data });
             
         }

@@ -17,6 +17,7 @@ namespace Application.Services
 {
     public class FlightServices : IFlightService
     {
+        public bool isFindOk = false;
         public IFlightRepository _flightRepository { get; set; }
         public IWebserviceConfig _webserviceConfig { get; set; }
         List<Flight> TotalFlights2 = new List<Flight>();
@@ -67,10 +68,17 @@ namespace Application.Services
             double price = 0;
             jy.Origin = origin;
             jy.Destination = destination;
-            jy.Flight = TotalFlights2;
-            foreach(var flights in TotalFlights2)
+            if (isFindOk)
             {
-                price += flights.Price;
+                jy.Flight = TotalFlights2;
+                foreach (var flights in TotalFlights2)
+                {
+                    price += flights.Price;
+                }
+            }
+            else
+            {
+                jy.Flight = new List<Flight>();
             }
             jy.Price = price;
 
@@ -98,8 +106,10 @@ namespace Application.Services
 
                         if(listFlightsByDestination.Count == 0)
                         {
+                            isFindOk = false;
                             continue;
                         }
+                        isFindOk = true;
                         TotalFlights2.Add(flightByOrigin);
 
                         origin = flightByOrigin.Destination;
@@ -108,6 +118,7 @@ namespace Application.Services
                     }
                     else
                     {
+                        isFindOk = true;
                         TotalFlights2.Add(flightByOrigin);
                         foreach (var flightByDestination in listFlightsFinal)
                         {
