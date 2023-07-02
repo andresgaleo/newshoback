@@ -32,6 +32,12 @@ namespace ApiFlights.Controllers
             return Ok(new { journey = data });
             
         }
+        [HttpGet("currency/{currencyFrom}/{currencyTo}/{price}")]
+        public async Task<IActionResult> GetCurrencyValue(string currencyFrom, string currencyTo,double price)
+        {
+            double newPrice = await _flightServices.SetCurrency(currencyFrom, currencyTo, price);
+            return Ok(new { price = newPrice });
+        }
     }
 }
 

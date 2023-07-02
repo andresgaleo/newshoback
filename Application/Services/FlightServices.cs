@@ -93,11 +93,6 @@ namespace Application.Services
                 //Obtengo todos los vuelos programados como origen si tienen escala para encontrar el destino.
                 foreach (var flightByOrigin in listFlightsByOrigin)
                 {
-
-                    /*if (flightByOrigin.Origin == origin)
-                    {
-                        continue;
-                    }*/
                     List<Flight> listFlightsFinal = listFlights
                         .Where(m => m.Origin == flightByOrigin.Destination && m.Destination == destination).ToList();
                     if (listFlightsFinal.Count == 0)
@@ -135,13 +130,12 @@ namespace Application.Services
             }
             //return TotalFlights;
         }
-        public Journey GetJourney()
+        public async Task<double> SetCurrency(string currencyFrom, string currencyTo, double price)
         {
-            return new Journey();
-        }
-        public string SetCurrency()
-        {
-            return "";
+            string url = "https://api.api-ninjas.com/v1/convertcurrency?want="+currencyTo+"&have="+currencyFrom+"&amount="+price;
+            string data = await _webserviceConfig.GetDataFromUrl(url);
+            dynamic jsonData = JsonConvert.DeserializeObject<dynamic>(data);
+            return Convert.ToDouble(jsonData.new_amount);
         }
     }
 }
