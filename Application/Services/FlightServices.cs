@@ -62,6 +62,7 @@ namespace Application.Services
             }
             else
             {
+                isFindOk = true;
                 TotalFlights2 = listFlightsDef;
             }
 
