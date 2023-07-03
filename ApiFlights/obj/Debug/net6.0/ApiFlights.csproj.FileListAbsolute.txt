@@ -37,3 +37,4 @@ C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\ApiFlights\bin\De
 C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\ApiFlights\bin\Debug\net6.0\Domain.pdb
 C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\ApiFlights\bin\Debug\net6.0\FlightData.pdb
 C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\ApiFlights\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\User\OneDrive\Escritorio\Projects\Newshore\ApiFlights\ApiFlights\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll

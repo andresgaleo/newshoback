@@ -12,18 +12,21 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using FlightData;
+using Microsoft.Extensions.Logging;
 
 namespace Application.Services
 {
     public class FlightServices : IFlightService
     {
+        private readonly ILogger _logger;
         public bool isFindOk = false;
         public IFlightRepository _flightRepository { get; set; }
         public IWebserviceConfig _webserviceConfig { get; set; }
         List<Flight> TotalFlights2 = new List<Flight>();
-        public FlightServices(IWebserviceConfig webserviceConfig) 
+        public FlightServices(IWebserviceConfig webserviceConfig, ILogger<FlightServices> logger) 
         {
             _webserviceConfig = webserviceConfig;
+            _logger = logger;
         }
         public async Task<List<Flight>> GetFlights()
         {
@@ -46,6 +49,8 @@ namespace Application.Services
         }
         public async Task<Journey> GetJourneys(string origin, string destination)
         {
+            _logger.LogInformation("CONSULTA DEL SERVICIO: ",
+            DateTime.UtcNow.ToLongTimeString());
             Journey jy = new Journey();
             //Obtengo todos lo vuelos
             List<Flight> listFlights = await this.GetFlights();
@@ -126,7 +131,10 @@ namespace Application.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                var message = ex.Message;
+                message = message + " Strack trace " + ex.StackTrace;
+                _logger.LogInformation("ERROR EN EL APLICATIVO: "+ message,
+                DateTime.UtcNow.ToLongTimeString());
             }
             //return TotalFlights;
         }

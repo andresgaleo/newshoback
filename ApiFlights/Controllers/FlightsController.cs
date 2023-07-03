@@ -21,8 +21,8 @@ namespace ApiFlights.Controllers
             List<Flight> data = await _flightServices.GetFlights();
             return Ok(data);
         }
-        [HttpPost("find/one")]
-        public async Task<IActionResult> GetJourneys(FlightFilter flight)
+        [HttpGet("find/one")]
+        public async Task<IActionResult> GetJourneys([FromQuery] FlightFilter flight)
         {
             Journey data = await _flightServices.GetJourneys(flight.Origin, flight.Destination);
             if(data.Price == 0)
